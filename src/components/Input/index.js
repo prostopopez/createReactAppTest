@@ -1,19 +1,19 @@
 import React, {Component} from 'react';
 import {View, Text, TouchableOpacity, TextInput, StyleSheet} from 'react-native';
 
-class Inputs extends Component {
+class Input extends Component {
     state = {
-        email: '',
-        password: ''
+        surname: '',
+        name: ''
     };
-    handleEmail = (text) => {
-        this.setState({email: text})
+    handleSurname = (text) => {
+        this.setState({surname: text})
     };
-    handlePassword = (text) => {
-        this.setState({password: text})
+    handleName = (text) => {
+        this.setState({name: text})
     };
-    login = (email, pass) => {
-        alert('email: ' + email + ', password: ' + pass)
+    login = (surname, name) => {
+        alert(`Ваше имя: ${surname} ${name}`);
     };
 
     render() {
@@ -22,21 +22,21 @@ class Inputs extends Component {
                 <TextInput style={styles.input}
                            underlineColorAndroid="transparent"
                            placeholder="Почта"
-                           placeholderTextColor="#9a73ef"
+                           placeholderTextColor='gray'
                            autoCapitalize="none"
-                           onChangeText={this.handleEmail}/>
+                           onChangeText={this.handleSurname}/>
 
                 <TextInput style={styles.input}
                            underlineColorAndroid="transparent"
                            placeholder="Пароль"
-                           placeholderTextColor="#9a73ef"
+                           placeholderTextColor='gray'
                            autoCapitalize="none"
-                           onChangeText={this.handlePassword}/>
+                           onChangeText={this.handleName}/>
 
                 <TouchableOpacity
                     style={styles.submitButton}
                     onPress={
-                        () => this.login(this.state.email, this.state.password)
+                        () => this.login(this.state.surname, this.state.name)
                     }>
                     <Text style={styles.submitButtonText}> Подтвердить </Text>
                 </TouchableOpacity>
@@ -45,20 +45,24 @@ class Inputs extends Component {
     }
 }
 
-export default Inputs
+export default Input;
 
 const styles = StyleSheet.create({
     container: {
-        paddingTop: 23
+        marginTop: 35,
     },
     input: {
-        margin: 15,
-        height: 40,
-        borderColor: '#7a42f4',
-        borderWidth: 1
+        marginTop: 15,
+        height: 45,
+        paddingLeft: 15,
+        paddingRight: 15,
+        borderColor: 'lightgray',
+        borderWidth: 1,
+        borderRadius: 5,
+        fontSize: 15
     },
     submitButton: {
-        backgroundColor: '#7a42f4',
+        backgroundColor: 'blue',
         padding: 10,
         margin: 15,
         height: 40,
