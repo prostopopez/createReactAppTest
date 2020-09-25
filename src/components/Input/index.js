@@ -21,14 +21,14 @@ class Input extends Component {
             <View style={styles.container}>
                 <TextInput style={styles.input}
                            underlineColorAndroid="transparent"
-                           placeholder="Почта"
+                           placeholder="Фамилия"
                            placeholderTextColor='gray'
                            autoCapitalize="none"
                            onChangeText={this.handleSurname}/>
 
                 <TextInput style={styles.input}
                            underlineColorAndroid="transparent"
-                           placeholder="Пароль"
+                           placeholder="Имя"
                            placeholderTextColor='gray'
                            autoCapitalize="none"
                            onChangeText={this.handleName}/>
